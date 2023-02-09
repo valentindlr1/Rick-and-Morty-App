@@ -4,10 +4,11 @@ import Cards from './components/Cards.jsx'
 import SearchBar from './components/SearchBar.jsx'
 import characters, { Rick } from './data.js'
 
+
 function App () {
   return (
-    <div className='App' style={{ padding: '25px' }}>
-      <div>
+    <div className='App' style={{ padding: '25px'}}>
+      <div style={{justifyContent: "space-around", display: "flex"}}>
         <Card
           name={Rick.name}
           species={Rick.species}
@@ -17,7 +18,7 @@ function App () {
         />
       </div>
       <hr />
-      <div>
+      <div >
         <Cards
           characters={characters}
         />
@@ -33,3 +34,4 @@ function App () {
 }
 
 export default App
+
