@@ -4,10 +4,14 @@ import style from "styled-components"
 const CardsStyle = style.div`
 display: flex;
 justify-content: center;
+flex-wrap: wrap;
+max-width: 100%
 `
 export default function Cards(props) {
-   const { characters } = props;
-   const personajes = characters?.map((per) => <div key={per.id} >{Card(per)}</div>)
+   const { onRandom, characters, onClose } = props;
+   const personajes = characters?.map(per => {
+   return <Card key={per.id} per={per} onClose={onClose} ></Card>
+})
    return (
    <CardsStyle>
       {personajes}

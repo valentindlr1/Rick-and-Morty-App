@@ -1,8 +1,9 @@
 import style from "styled-components";
+import { useState } from "react";
 
 const InputStyle = style.input`
 height: 24px;
-width: 10%;
+width: 50%;
 box-shadow: 0 0 8px #FFFFFF;
 border-radius: 10px;
 &:hover{
@@ -27,14 +28,30 @@ box-shadow: 0 0 8px #FFFFFF;
    color: white;
 }
 `;
+const DivS = style.div`
+display: flex;
+max-width: 100%;
+justify-content: center;
+align-items: center;
+`;
 
 
 export default function SearchBar(props) {
+   const [text, setText] = useState("");
+
+   function handleInputChange (event){
+      const texto = event.target.value
+      setText(texto)
+   }
    
    return (
-      <div>
-         <InputStyle type='search' />
-         <ButtonStyle onClick={() => props.onSearch()}>Agregar</ButtonStyle> 
-      </div>
+      <DivS>
+         <InputStyle type='search' value={text} onChange={handleInputChange}/>
+         <ButtonStyle onClick={() => {
+            props.onSearch(text)
+            setText("")}}>
+               Agregar
+               </ButtonStyle> 
+      </DivS>
    );
 }
