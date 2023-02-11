@@ -1,4 +1,5 @@
 import style from "styled-components";
+import { Link } from "react-router-dom";
 //rgba(232, 6, 255, 0.4) morado #B45CAA bordeshadow
 const CardsStyle = style.div`
 margin-left: 40px;
@@ -43,6 +44,7 @@ margin: 0px;
 border-radius: 10px;
 color: black;
 box-shadow: 0 0 4px #FFFFFF;
+font-size: 18px;
 
 `;
 const SpecieStyle = style.h2`
@@ -91,24 +93,28 @@ padding: 0px;
 
 export default function Card(props) {
 
-  const { per, onClose } = props;
+  const { detailId, per, onClose } = props;
 
    return (
-      <CardsStyle key= {props.key}>
+      <CardsStyle >
          <div style={{margin: "1px", paddingLeft: "10px", paddingRight: "10px", display: "flex", justifyContent: "space-between", alignItems: "center", height: "45px"}}>
+         
+         <Link to={`/detail/${detailId}`} > 
          <NombreStyle>{per.name}</NombreStyle>
+         </Link>
          <BotonStyle onClick={() => {
             //CERRAR CARD
             return onClose(per.id);
          }}>X</BotonStyle>
          </div>
+         
          <ImgStyle  src={per.image} alt={per.name + "img"} style= {{maxWidth: "80%"}}></ImgStyle> 
          <div style={{display: "flex", justifyContent: "space-around", alignItems: "center"}}>
          <SpecieStyle>Specie: {per.species}</SpecieStyle>
          <HrStyle />
          <GenderStyle>Gender: {per.gender}</GenderStyle>
          </div>
-         
+       
          
       </CardsStyle>
    );

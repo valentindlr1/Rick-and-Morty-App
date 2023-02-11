@@ -8,9 +8,9 @@ flex-wrap: wrap;
 max-width: 100%
 `
 export default function Cards(props) {
-   const { onRandom, characters, onClose } = props;
+   const { characters, onClose } = props;
    const personajes = characters?.map(per => {
-   return <Card key={per.id} per={per} onClose={onClose} ></Card>
+   return <Card key={per.id} per={per} onClose={onClose} detailId={per.id} ></Card>
 })
    return (
    <CardsStyle>
