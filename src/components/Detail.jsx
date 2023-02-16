@@ -80,7 +80,7 @@ export default function Detail(){
             <Dato>Origen: {character?.origin?.name}</Dato>
         </DataStyle>
         <Foto src={character?.image} />
-        <Link to="/"><Volver>Volver</Volver></Link>
+        <Link to="/home"><Volver>Volver</Volver></Link>
         
     </Div>
 }

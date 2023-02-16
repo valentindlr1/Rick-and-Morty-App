@@ -46,7 +46,7 @@ export default function SearchBar(props) {
    
    return (
       <DivS>
-         <InputStyle type='search' value={text} onChange={handleInputChange}/>
+         <InputStyle type='search' value={text} onChange={handleInputChange} placeholder="Buscar por ID"/>
          <ButtonStyle onClick={() => {
             props.onSearch(text)
             setText("")}}>

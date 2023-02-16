@@ -1,5 +1,13 @@
+import React, { useState } from "react";
 import style from "styled-components";
 import { Link } from "react-router-dom";
+import { addFavorite, delFavorite } from "../redux/actions";
+import { connect } from "react-redux";
+
+
+
+
+
 //rgba(232, 6, 255, 0.4) morado #B45CAA bordeshadow
 const CardsStyle = style.div`
 margin-left: 40px;
@@ -91,10 +99,26 @@ padding: 0px;
  box-shadow: 0 0 4px #FFFFFF;
 `;
 
-export default function Card(props) {
 
-  const { detailId, per, onClose } = props;
 
+export function Card(props) {
+   const [isFav, setFav] = useState(false)
+   const { detailId, per, onClose } = props;
+   
+   
+   const handleFavorite = ()=>{
+     console.log(props)
+      if (isFav) {
+         setFav(false);
+         (props.dispatch?.delFavorite(per.id))
+      } else {
+         setFav(true);
+         (props.dispatch?.addFavorite(per))
+      }
+   
+   }
+  
+  
    return (
       <CardsStyle >
          <div style={{margin: "1px", paddingLeft: "10px", paddingRight: "10px", display: "flex", justifyContent: "space-between", alignItems: "center", height: "45px"}}>
@@ -102,6 +126,13 @@ export default function Card(props) {
          <Link to={`/detail/${detailId}`} > 
          <NombreStyle>{per.name}</NombreStyle>
          </Link>
+         {
+            isFav ? (
+               <button onClick={()=>handleFavorite()}>❤️</button>
+            ) : (
+               <button onClick={()=>handleFavorite()}>🤍</button>
+            )
+         }
          <BotonStyle onClick={() => {
             //CERRAR CARD
             return onClose(per.id);
@@ -119,3 +150,13 @@ export default function Card(props) {
       </CardsStyle>
    );
 }
+
+export function mapDispatchToProps(dispatch){
+   return{
+      addFavorite: (character)=> dispatch(addFavorite(character)),
+      delFavorite: (id)=> dispatch(delFavorite(id)),
+   }
+}
+
+
+export default connect(null, mapDispatchToProps)(Card);

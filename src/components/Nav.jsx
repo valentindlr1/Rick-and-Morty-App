@@ -47,6 +47,22 @@ box-shadow: 0 0 8px #FFFFFF;
    color: white;
 }
 `;
+const FavBut = style.button`
+position: absolute;
+left: 150px;
+cursor: pointer;
+border-radius: 10px;
+background-color: #FFFFFF;
+font-family: Cursive;
+font-weight: bold;
+height: 30px;
+box-shadow: 0 0 8px #FFFFFF;
+&:hover{
+   box-shadow: 0 0 16px #FFFFFF;
+   background-color: #686868;
+   color: white;
+}
+`;
 const AboutBut = style.button`
 position: absolute;
 right: 50px;
@@ -63,19 +79,40 @@ box-shadow: 0 0 8px #FFFFFF;
    color: white;
 }
 `;
+const Logout = style.button`
+position: absolute;
+right: 130px;
+cursor: pointer;
+border-radius: 10px;
+background-color: #FFFFFF;
+font-family: Cursive;
+font-weight: bold;
+height: 30px;
+box-shadow: 0 0 8px #FFFFFF;
+&:hover{
+   box-shadow: 0 0 16px #FFFFFF;
+   background-color: #686868;
+   color: white;
+}
+`;
 
 export default function Nav(props){
-    const {onRandom} = props;
-
-    return (
-    <DivStyle>
-        <Link to="/home"><HomeBut>HOME</HomeBut></Link>
-        
-        <SearchBar onSearch={props.onSearch}/>
-        <ButtonStyle onClick={()=> onRandom() }>Random</ButtonStyle>
-
-        <Link to="/about"><AboutBut>About</AboutBut></Link>
-        
-    </DivStyle>
-    )
+   const {onRandom, onSearch, logout} = props;
+   
+         return (
+         <DivStyle >
+             <Link to="/home"><HomeBut>HOME</HomeBut></Link>
+             <Link to="/favorites"><FavBut>Mis Favoritos</FavBut></Link>
+             
+             <SearchBar onSearch={onSearch}/>
+             <ButtonStyle onClick={()=> onRandom() }>Random</ButtonStyle>
+     
+            <Logout onClick={()=> logout()}>Log out</Logout>
+             <Link to="/about"><AboutBut>About</AboutBut></Link>
+             
+         </DivStyle>
+         )
+  
+   
+   
 }
