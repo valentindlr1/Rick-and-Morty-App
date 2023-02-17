@@ -7,7 +7,7 @@ import Detail from './components/Detail.jsx';
 import { Routes , Route, useNavigate, useLocation } from 'react-router-dom';
 import Form from "./components/Form"
 import { useEffect, useState } from 'react';
-import {Favorites} from "./components/Favorites/Favorites"
+import Favorites from "./components/Favorites/Favorites"
 
 
 
@@ -56,9 +56,10 @@ function login(userData){
     })
 
   }
+ 
   
   function onRandom(){
-   const num = Math.floor(Math.random() * 827);
+   const num = Math.floor(Math.random() * 826);
    navigate("/home");
     onSearch(num);
   }

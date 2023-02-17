@@ -1,4 +1,4 @@
-import {Card} from './Card';
+import Card from './Card';
 import style from "styled-components"
 import React from 'react';
 

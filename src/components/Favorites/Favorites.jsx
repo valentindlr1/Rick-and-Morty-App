@@ -6,11 +6,14 @@ import { connect } from "react-redux";
 export function Favorites(props){
 
 const favos = props.myFavorites?.map(fav =>{
-    return <Card key={fav.id} per={fav} detailId={fav.id}/>
+
+    return <Card key={fav.id} per={fav} detailId={fav.id} />
 })
 
+
+
 return (
-    <div>
+    <div className="favorites">
         {favos}
     </div>
     )
