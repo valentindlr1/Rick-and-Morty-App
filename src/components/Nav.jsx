@@ -16,6 +16,8 @@ justify-content: center;
 
 `;
 const ButtonStyle = style.button`
+font-size: large;
+padding: 5px;
 cursor: pointer;
 border-radius: 10px;
 margin-left: 20px;
@@ -23,7 +25,7 @@ color: black;
 background-color: #FFFFFF;
 font-family: Cursive;
 font-weight: bold;
-height: 30px;
+
 box-shadow: 0 0 8px #FFFFFF;
 &:hover{
    box-shadow: 0 0 16px #FFFFFF;
@@ -32,6 +34,8 @@ box-shadow: 0 0 8px #FFFFFF;
 }
 `;
 const HomeBut = style.button`
+font-size: large;
+padding: 5px;
 position: absolute;
 left: 50px;
 cursor: pointer;
@@ -39,7 +43,7 @@ border-radius: 10px;
 background-color: #FFFFFF;
 font-family: Cursive;
 font-weight: bold;
-height: 30px;
+
 box-shadow: 0 0 8px #FFFFFF;
 &:hover{
    box-shadow: 0 0 16px #FFFFFF;
@@ -48,6 +52,8 @@ box-shadow: 0 0 8px #FFFFFF;
 }
 `;
 const FavBut = style.button`
+font-size: large;
+padding: 5px;
 position: absolute;
 left: 150px;
 cursor: pointer;
@@ -55,7 +61,7 @@ border-radius: 10px;
 background-color: #FFFFFF;
 font-family: Cursive;
 font-weight: bold;
-height: 30px;
+
 box-shadow: 0 0 8px #FFFFFF;
 &:hover{
    box-shadow: 0 0 16px #FFFFFF;
@@ -64,6 +70,8 @@ box-shadow: 0 0 8px #FFFFFF;
 }
 `;
 const AboutBut = style.button`
+font-size: large;
+padding: 5px;
 position: absolute;
 right: 50px;
 cursor: pointer;
@@ -71,7 +79,7 @@ border-radius: 10px;
 background-color: #FFFFFF;
 font-family: Cursive;
 font-weight: bold;
-height: 30px;
+
 box-shadow: 0 0 8px #FFFFFF;
 &:hover{
    box-shadow: 0 0 16px #FFFFFF;
@@ -80,6 +88,8 @@ box-shadow: 0 0 8px #FFFFFF;
 }
 `;
 const Logout = style.button`
+font-size: large;
+padding: 5px;
 position: absolute;
 right: 130px;
 cursor: pointer;
@@ -87,7 +97,7 @@ border-radius: 10px;
 background-color: #FFFFFF;
 font-family: Cursive;
 font-weight: bold;
-height: 30px;
+
 box-shadow: 0 0 8px #FFFFFF;
 &:hover{
    box-shadow: 0 0 16px #FFFFFF;

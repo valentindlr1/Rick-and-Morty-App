@@ -48,7 +48,7 @@ font-weight: bold;
 const NombreStyle = style.h2`
 font-family: Cursive;
 background: rgba(255, 255, 255, 0.7);
-max-width: 190px;
+width: 125px;
 padding-left: 5px;
 padding-right: 5px;
 padding-top: 1px;
@@ -57,7 +57,7 @@ margin: 0px;
 border-radius: 10px;
 color: black;
 box-shadow: 0 0 4px #FFFFFF;
-font-size: 18px;
+font-size: 100%;
 
 `;
 const SpecieStyle = style.h2`
@@ -93,6 +93,7 @@ box-shadow: 0 0 4px #FFFFFF;
 const ImgStyle = style.img`
 border: 2px solid;
 border-radius: 20px;
+
 `;
 const HrStyle = style.hr`
 margin: 0px;

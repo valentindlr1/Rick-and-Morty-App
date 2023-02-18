@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 const Div = styled.div`
 justify-content: center;
 display: flex;
-
+align-items: center;
 flex-wrap: wrap;
 `;
 const DataStyle = styled.div`
@@ -18,6 +18,7 @@ padding-right: 50px;
 border: 3px solid white;
 border-radius: 15px;
 box-shadow: 0 0 15px #FFFFFF;
+
 `;
 const Dato = styled.div`
 color: white;
@@ -33,10 +34,11 @@ const Foto = styled.img`
 border: 3px solid white;
 border-radius: 20px;
 box-shadow: 0 0 15px #FFFFFF;
+height: 300px;
 `;
 const Volver = styled.button`
 position: absolute;
-margin-top: 500px;
+margin-top: 0px;
 cursor: pointer;
 border-radius: 10px;
 background-color: #FFFFFF;
@@ -71,16 +73,23 @@ export default function Detail(){
         return setCharacter({});
       }, [detailId]);
     
-    return <Div >
-        <DataStyle>
-            <Nom>{character?.name}</Nom>
-            <Dato>Status: {character?.status}</Dato>
-            <Dato>Especie: {character?.species}</Dato>
-            <Dato>Genero: {character?.gender}</Dato>
-            <Dato>Origen: {character?.origin?.name}</Dato>
-        </DataStyle>
-        <Foto src={character?.image} />
-        <Link to="/home"><Volver>Volver</Volver></Link>
-        
-    </Div>
+    return <div>
+            <Div >
+
+            <DataStyle>
+                <Nom>{character?.name}</Nom>
+                <Dato>Status: {character?.status}</Dato>
+                <Dato>Especie: {character?.species}</Dato>
+                <Dato>Genero: {character?.gender}</Dato>
+                <Dato>Origen: {character?.origin?.name}</Dato>
+            </DataStyle>
+            <Foto src={character?.image} />
+            
+            </Div>
+            
+            <Link to="/home"><Volver>Volver</Volver></Link>
+            
+            
+    </div>
+    
 }
