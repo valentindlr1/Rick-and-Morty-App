@@ -8,6 +8,7 @@ display: flex;
 justify-content: center;
 flex-wrap: wrap;
 max-width: 100%
+
 `
 
 

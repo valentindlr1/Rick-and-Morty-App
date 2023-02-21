@@ -21,7 +21,7 @@ function handleSelectGender(e){
 useEffect(()=>{
     dispatch(orderCards("Select"))
     dispatch(filterCards("Select"))
-},[])
+},[props.myFavorites])
 
 return (
     <div className="favorites">
@@ -47,7 +47,8 @@ return (
 
 export const mapStateToProps = (state) => {
     return{
-        allCharacters: state.allCharacters
+        allCharacters: state.allCharacters,
+        myFavorites: state.myFavorites
     }
 }
 export default connect(mapStateToProps)(Favorites);
