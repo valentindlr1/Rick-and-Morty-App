@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { Link } from "react-router-dom"
 
+const gif = require("../img/portalgif.gif")
+
+
 
 const Div = styled.div`
 justify-content: center;
@@ -58,16 +61,18 @@ export default function Detail(){
     const [character, setCharacter] = useState()
     
     useEffect(() => {
-        fetch(`https://rickandmortyapi.com/api/character/${detailId}`)
+      
+        fetch(`http://localhost:3001/detail/${detailId}`)
           .then((response) => response.json())
+          .then(res =>res.data)
           .then((char) => {
+            
             if (char.name) {
               setCharacter(char);
-            } else {
-              window.alert("No hay personajes con ese ID");
-            }
+            } 
           })
           .catch((err) => {
+           
             window.alert("No hay personajes con ese ID");
           });
         return setCharacter({});
@@ -81,10 +86,9 @@ export default function Detail(){
                 <Dato>Status: {character?.status}</Dato>
                 <Dato>Especie: {character?.species}</Dato>
                 <Dato>Genero: {character?.gender}</Dato>
-                <Dato>Origen: {character?.origin?.name}</Dato>
+                <Dato>Origen: {character?.origin}</Dato>
             </DataStyle>
-            <Foto src={character?.image} />
-            
+             {  <Foto src={character?.image || gif} /> }
             </Div>
             
             <Link to="/home"><Volver>Volver</Volver></Link>

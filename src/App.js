@@ -37,8 +37,9 @@ function login(userData){
       if (element.id.toString() === text) repe = true;
     });
     if(!repe){
-      fetch(`https://rickandmortyapi.com/api/character/${text}`)
+      fetch(`http://localhost:3001/onsearch/${text}`)
       .then((response) => response.json())
+      .then(res =>res.data)
       .then((data) => {
         navigate("/home");
          if (data.name) {

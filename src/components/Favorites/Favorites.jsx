@@ -6,7 +6,7 @@ import { orderCards, filterCards } from "../../redux/actions";
 
 export function Favorites(props){
 
-const favos = props.allCharacters?.map(fav =>{
+const favos = props.allCharacters?.map((fav) =>{
 
     return <Card key={fav.id} per={fav} detailId={fav.id} />
 })
@@ -19,6 +19,7 @@ function handleSelectGender(e){
 }
 
 useEffect(()=>{
+    
     dispatch(orderCards("Select"))
     dispatch(filterCards("Select"))
 },[props.myFavorites])

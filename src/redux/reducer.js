@@ -1,4 +1,6 @@
+// import { post } from "../../../back/src/routes";
 import { ADD_FAVORITE, DEL_FAVORITE, FILTER, ORDER } from "./actions";
+
 
 const initialState = {
     myFavorites: [],
@@ -6,19 +8,19 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
+  
    let filtrado = false;
    let filtrado2 = false;
     switch(action.type){
         case ADD_FAVORITE:
-            
             return{
                 ...state,
-                myFavorites: [...state.myFavorites, action.payload]
+                myFavorites: action.payload
             }
         case DEL_FAVORITE:
             return{
                 ...state,
-                myFavorites: state.myFavorites.filter(card => card.id !== action.payload)
+                myFavorites: action.payload
             }
         case FILTER:
             if(action.payload === "Select" && !filtrado2) return {...state, allCharacters: [...state.myFavorites]}

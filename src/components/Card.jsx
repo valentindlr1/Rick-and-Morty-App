@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import { addFavorite, delFavorite } from "../redux/actions";
 import { connect } from "react-redux";
 import { useEffect } from "react";
+const gif = require("../img/portalgif.gif")
 
 
 
@@ -168,7 +169,7 @@ export function Card(props) {
 
          </div>
          
-         <ImgStyle  src={per.image} alt={per.name + "img"} style= {{maxWidth: "80%"}}></ImgStyle> 
+         <ImgStyle  src={per?.image || gif} alt={per.name + "img"} style= {{maxWidth: "80%"}}></ImgStyle> 
          <div style={{display: "flex", justifyContent: "space-around", alignItems: "center"}}>
          <SpecieStyle>Specie: {per.species}</SpecieStyle>
          <HrStyle />
